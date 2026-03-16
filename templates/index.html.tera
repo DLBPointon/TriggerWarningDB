@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Warning Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>{{ app_info.app_name }}</h1>
+    <p class="subheader">v{{ app_info.app_semantic_version }} — {{ app_info.app_named_version }}</p>
+  </header>
+
+  {% include "nav_bar" %}
+
+  <main class="center">
+    <h2>Welcome to</h2>
+    <h2>Trigger Warning DB</h2>
+    <p class="lead">
+        This is TWDB, a community based project to help those dealing with the effects of a traumatic experience to simply enjoy mass media again.
+    </p>
+
+    <p class="lead">
+        Initially, this DB will focus on Birth and Sexual truma's, catalouging media with scenes which can trigger a viewer. Media should be enjoyed without the threat of being triggered. Traumatic events have become a goto for shock value, and there are far to many people ignorant at how these events have very real ramifications on someones life.
+    </p>
+      <a class="cta" href="/tv_media"> NO SMALL SCREEN YET</a>
+      <a class="cta" href="/movies">Go to the Big Screen (movies)</a>
+    </p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Warning Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>TriggerWarning DB Error</h1>
+  </header>
+
+  <main class="center">
+    <h2>You're not supposed to be here!</h2>
+    <h1>{{ page_info }} Error</h1>
+    <p>{{ error_message }}</p>
+    <a class="back-link" href="/" onclick="if (window.history.length > 1) { history.back(); return false; }">← Head back</a>
+
+
+  </main>
+</body>
+</html>

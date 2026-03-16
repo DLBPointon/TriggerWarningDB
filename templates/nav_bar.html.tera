@@ -1,0 +1,85 @@
+<nav class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-links">
+            <a class="nav-link {% if current_page == "index" %}active{% endif %}" href="/">Home</a>
+            <a class="nav-link {% if current_page == "movie_list" %}active{% endif %}" href="/movies">Movies</a>
+            <a class="nav-link {% if current_page == "tv_list" %}active{% endif %}" href="/tv_list">TV Shows</a>
+            <a class="nav-link {% if current_page == "categories" %}active{% endif %}" href="/category_explainer">Categories</a>
+            <a class="nav-link {% if current_page == "about" %}active{% endif %}" href="/about">About</a>
+        </div>
+    </div>
+</nav>
+
+<style>
+  /* Container */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0d1425;
+    border-top: 1px solid #e6e8ee;
+    border-bottom: 1px solid #e6e8ee;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  /* Inner layout: brand left, links centered */
+  .navbar-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Links centered */
+  .navbar-links {
+    justify-self: center;
+    display: inline-flex;
+    gap: 18px;
+    grid-column: 2;
+
+  }
+
+  .nav-link {
+    color: #FFFF;
+    text-decoration: none;
+    padding: 8px 8px;
+    border-radius: 8px;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: #0a66c2;
+    background: #f3f7fb;
+  }
+
+  .nav-link.active {
+    color: #0a66c2;
+    background: #eaf2fb;
+    font-weight: 600;
+  }
+
+  /* Optional right-side actions placeholder */
+  .navbar-inner::after {
+    content: "";
+    justify-self: end;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 640px) {
+    .navbar-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .navbar-brand {
+      justify-self: center;
+      margin-bottom: 6px;
+    }
+    .navbar-links {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+</style>

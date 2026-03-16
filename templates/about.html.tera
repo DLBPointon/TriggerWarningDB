@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Warning Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>{{ app_info.app_name }}</h1>
+    <p class="subheader">v{{ app_info.app_semantic_version }} — {{ app_info.app_named_version }}</p>
+  </header>
+
+  {% include "nav_bar" %}
+
+  <main class="center">
+    <h2>What is Trigger Warning DB</h2>
+    <p class="lead">
+        Popular media often relies on various topics in order to hook the viewer/header.
+    </p>
+
+    <p class="lead">
+        However, it has gone to far beyond simple shock and into a relience on scenes depicting gender-based violence and issues. These inlcude Sexual abuse and Traumatic births, they are now commonly used in order to cause shock in the audience, motivation in the male lead character and hook the audience.
+    </p>
+
+    <p>
+        Yes, in some cases this to to depict what real life would have to be like in a given situation (See A Quiet Place), however, that doesn't mean everyone can simply watch those events.
+    </p>
+
+    <p>
+        This DB attempts to start catalouging these "Events" as a way of ensuring that those effected by them, simply don't have to see them. Skip the scene/movie/episode and carry on with your day with about getting triggered, the power to simply enjoy media should be back in the hands of the viewer.
+    </p>
+  </main>
+</body>
+</html>

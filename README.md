@@ -3,11 +3,12 @@
 ## About
 A website and database dedicated to helping those with traumatic experiences enjoy media again, without the shock of a traumatic event. This project aims to add a degree of annotation to the current IMDB and TVDB projects, via the community.
 
-This is a project, quite literally, 6 years in the making. Initial versions being React -> Angular -> Google Sheet (which still works very nicely!) -> Rocket.rs.
+This is a project, quite literally, 6 years in the making. Initial versions being React -> Angular -> Google Sheet (which still works very nicely!) -> Rocket.rs (now).
 
-At no point will this project be monetised, donations are welcome and will only go towards the upkeep and maintenance of the project.
+At no point will this project be monetised, donations are welcome and will only go towards the upkeep and maintenance of the project. If there are any donations, there will be a page to log the ins and out of the pot.
 
 ## ToDo:
+- Ensure DB migrations will be set up and safe to use.
 - TV media
     - Adding support for TV media is the next major plan after the movie side is stabilised.
     - There will be extra work on this simply because of the extra layer of data needed to be kept.

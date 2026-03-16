@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Warning Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>{{ app_info.app_name }}</h1>
+    <p class="subheader">v{{ app_info.app_semantic_version }} — {{ app_info.app_named_version }}</p>
+  </header>
+
+  {% include "nav_bar" %}
+
+  <main class="center">
+    <h2>Welcome to the Category explainer</h2>
+
+    <p>
+        Here is a quick explainer of some of the categories used in this project.
+    </p>
+
+
+    <h4>Events</h4>
+    <p>
+        In TWDB we currently use a rather small list of topics to describe
+        various traumatic events.
+        These event types have been chosen as each effect large numbers of people and each are unique in their effect on the victim (this is not to say other types of traumatic events are less unique or important).
+
+        These include:
+        <ul>
+            <li>Birth Events</li>
+            <li>Baby Loss</li>
+            <li>Parent Loss</li>
+            <li>Sexual Violence</li>
+            <li>Car Crash</li>
+            <li>Psychological Abuse</li>
+            <li>Physical Abuse</li>
+            <li>Other</li>
+        </ul>
+    </p>
+    <p>
+        You can find the most upto date list via the API at the endpoint: <a href="/api/event_categories">/api/event_categories</a>.
+    </p>
+    <p>
+        These 8 event types will be under constant review, however, we hope to keep these at ~10.
+        This is to ensure that users can easily find the right events to inform their choices.
+    </p>
+    <p>
+        Sub-categories could be something added to this in the future.
+        However, we would need extended testing to ensure that it fits the ethos of the site and improved usability for users.
+    </p>
+
+    <h4>Genres</h4>
+
+    <p>
+        Genres used in this database include:
+        <ul>
+            <li>Action</li>
+            <li>Adventure</li>
+            <li>Animation</li>
+            <li>Comedy</li>
+            <li>Crime</li>
+            <li>Documentary</li>
+            <li>Drama</li>
+            <li>Fantasy</li>
+            <li>Historical</li>
+            <li>Horror</li>
+            <li>Mystery</li>
+            <li>Musical</li>
+            <li>Romance</li>
+            <li>Sci-Fi</li>
+            <li>Thriller</li>
+            <li>War</li>
+            <li>Westerh</li>
+        </ul>
+
+    </p>
+    <p>
+        This should cover pretty much everything.
+    </p>
+
+
+  </main>
+</body>
+</html>

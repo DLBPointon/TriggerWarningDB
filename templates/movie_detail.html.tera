@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ movie.title }} (ID: {{movie.id}})</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+  <style>
+    header.page-header { margin-bottom: 1rem; }
+    .grid { padding: 0px 20px; display: grid; grid-template-columns: 240px 1fr; gap: 1.25rem; }
+    .poster { max-width: 80%; height: auto; border-radius: 6px; object-fit: cover; background: #f2f2f2; border: 1px solid #e0e0e0; }
+    .meta { color: #FFFFFF; font-size: 0.95rem; margin: 0.25rem 0 1rem; }
+    .meta span + span::before { content: " • "; margin: 0 0.35rem; color: #999; }
+    .label { font-weight: 600; color: #FFFFFF; }
+    .synopsis { color: #FFFFFF; white-space: pre-wrap; line-height: 1.5; margin-top: 0.5rem; }
+    .section { margin-top: 1.5rem; }
+    .badges { margin-top: 0.5rem; }
+    .badge { display: inline-block; background: #eef4ff; color: #0a66c2; border: 1px solid #d7e6ff; border-radius: 12px; padding: 1px 5px; margin-right: 2.5px; margin-bottom: 2.5px; }
+    .badge-cert { display: inline-block; background: #eef4ff; color: #0a66c2; border: 1px solid #d7e6ff; border-radius: 12px; padding: 0px 3px; margin-right: 0.1px; margin-bottom: 0.1px; }
+    .button { min-width: 100%; display: inline-block; background: #eef4ff; color: #0a66c2; border: 1px solid #d7e6ff; border-radius: 1px; padding: 1px 5px; margin-right: 2.5px; margin-bottom: 2.5px; }
+    .events { margin-top: 2rem; }
+    .event-item { padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+    .event-meta { color: #666; font-size: 0.9rem; }
+    .event-categories { margin-top: 0.25rem; font-size: 0.9rem; color: #444; }
+    .back-link { display: inline-block; margin-top: 1.25rem; color: #0a66c2; text-decoration: none; }
+  </style>
+</head>
+
+<body>
+    <header class="page-header">
+      <a class="back-link" href="/movies" onclick="if (window.history.length > 1) { history.back(); return false; }">← Back</a>
+      <h1>{{ movie.title }} (ID: {{movie.id}})</h1>
+    </header>
+
+    {% include "nav_bar" %}
+
+    <div id="movie-heatmap" class="heatmap"></div>
+    <section class="grid">
+      <div>
+        {% if movie.poster_url %}
+          <img class="poster" src="{{ movie.poster_url }}" alt="Poster for {{ movie.title }}">
+        {% else %}
+          <img class="poster" src="/static/placeholder-poster.png" alt="No poster available">
+        {% endif %}
+      </div>
+
+      <div>
+        <div class="meta">
+            {% if movie.release_year %}<span>Year: {{ movie.release_year }}</span>{% endif %}
+            {% if movie.runtime_minutes %}<span>Runtime: {{ (movie.runtime_minutes) }} mins</span>{% endif %}
+            {% if movie.runtime_minutes and events_count %}<span>Events Per Hour: {{ ((events_count * 60.0) / movie.runtime_minutes) | round(method="common", precision=1) }}</span>{% endif %}
+            {% if movie.certification %}<span>Cert: <span class="badge-cert"> {{ movie.certification }}</span></span>{% endif %}
+        </div>
+
+        <p class="label">IMDB:
+            <a href="https://www.imdb.com/title/{{movie.imdb_code}}">{{movie.imdb_code}}</a>
+        </p>
+
+        <p class="label">Important Notes!</p>
+        <p class="synopsis">Here: {{ movie.general_notes }}</p>
+
+        <p class="label">Synopsis</p>
+        {% if movie.synopsis %}
+          <p class="synopsis">{{ movie.synopsis }}</p>
+        {% else %}
+          <p class="synopsis">No synopsis provided.</p>
+        {% endif %}
+
+        {% if genres and genres | length > 0 %}
+          <div class="section">
+            <p class="label">Genres</p>
+            <div class="badges">
+              {% for g in genres %}
+                <span class="badge">{{ g }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if studios and studios | length > 0 %}
+          <div class="section">
+            <p class="label">Studios</p>
+            <div class="badges">
+              {% for s in studios %}
+                <span class="badge">{{ s }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if directors and directors | length > 0 %}
+          <div class="section">
+            <p class="label">Directors</p>
+            <div class="badges">
+              {% for d in directors %}
+                <span class="badge">{{ d }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if writers and writers | length > 0 %}
+          <div class="section">
+            <p class="label">Writers</p>
+            <div class="badges">
+              {% for w in writers %}
+                <span class="badge">{{ w }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if grouped_events and grouped_events | length > 0 %}
+          <div class="events">
+            <p class="label">Events</p>
+            <p> Event buttons are drop down menus which contain detailed specifics of the type of trauma involved in a piece of media. Please do not open unless you want to know more!</p>
+
+            <script>
+              function toggleSection(id, btnId) {
+                const el = document.getElementById(id);
+                const btn = document.getElementById(btnId);
+                if (!el) return;
+                const isHidden = el.style.display === 'none' || el.style.display === '';
+                el.style.display = isHidden ? 'block' : 'none';
+                if (btn) {
+                  btn.textContent = btn.textContent.replace(isHidden ? '▸' : '▾', isHidden ? '▾' : '▸');
+                }
+              }
+            </script>
+
+            {% for grp in grouped_events %}
+              {% set sec_id = "evt_" ~ grp.category | lower | replace(from=" ", to="_") %}
+              {% set btn_id = sec_id ~ "_btn" %}
+              <div class="section">
+                <button class="button" id="{{ btn_id }}" type="button" onclick="toggleSection('{{ sec_id }}', '{{ btn_id }}')" style="cursor:pointer;">
+                  {{ grp.category }} ({{ grp.count }}) ▸
+                </button>
+                <div id="{{ sec_id }}" style="display:none; margin-top:0.5rem;">
+                  {% for e in grp.events %}
+                    <div class="event-item">
+                      <div class="event-meta">
+                        {% if e.verified == false %}
+                            <span class="not-verified"> Not yet verified! </span>
+                        {% else %}
+                            <span class="verified"> Verified! </span>
+                        {% endif %}
+                        {% if e.time_minutes >= 0 %} • Event Starts at: {{ (e.time_minutes) }} min{% endif %}
+                        {% if e.duration_minutes >= 0 and e.time_minutes >= 0 %} • Event Ends at: {{ (e.time_minutes + e.duration_minutes) }} min{% endif %}
+                      </div>
+                      {% if e.comment %}
+                        <div>{{ e.comment }}</div>
+                      {% endif %}
+                      {% if e.categories and e.categories | length > 0 %}
+                        <div class="event-categories">
+                          {% for c in e.categories %}
+                            <span class="badge">{{ c }}</span>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <a class="back-link" href="/movies" onclick="if (window.history.length > 1) { history.back(); return false; }">← Back</a>
+  </main>
+</body>
+</html>

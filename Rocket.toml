@@ -1,0 +1,7 @@
+[default]
+address = "127.0.0.1"
+port = 8000
+workers = 2
+
+[default.databases]
+sqlite_database = { url = "file:db.sqlite", pool_size = 2 }
