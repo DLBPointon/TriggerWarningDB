@@ -1,0 +1,1090 @@
+{
+    "submitter_id": 1,
+    "movies": [
+        {
+            "title": "A Quiet Place",
+            "certification": "15",
+            "runtime_minutes": 90,
+            "synopsis": "A Quiet Place is a 2018 American post-apocalyptic horror film directed by John Krasinski, from a screenplay he co-wrote with Scott Beck and Bryan Woods based on a story the latter two conceived. The movie tells the story of a mother (Emily Blunt) and father (Krasinski) who struggle to survive and raise their children (Millicent Simmonds and Noah Jupe) in a post-apocalyptic world inhabited by blind extraterrestrial creatures with an acute sense of hearing.",
+            "release_year": 2018,
+            "poster_url": "https://upload.wikimedia.org/wikipedia/en/a/a0/A_Quiet_Place_film_poster.png",
+            "imdb_code": "tt6644200",
+            "studios": [
+                "Paramount Pictures"
+            ],
+            "directors": [
+                "John Krasinski"
+            ],
+            "writers": [
+                "Bryan Woods",
+                "John Krasinski",
+                "Scott Beck"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Horror",
+                "Drama"
+            ],
+            "events": [
+                {
+                    "verified": false,
+                    "time_minutes": 0,
+                    "duration_minutes": 5,
+                    "comment": "A technically 'well done' scene, especially, during filming where the actors and staff where given time to deal with emotional toll of the scene. It is however an extremely harrowing depiction of birth whilst having to be alone and without pain relief.",
+                    "categories": [
+                        "Birth Event"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Inception",
+            "runtime_minutes": 8880,
+            "synopsis": "A thief who steals corporate secrets through dream-sharing technology is tasked with inception.",
+            "release_year": 2010,
+            "poster_url": "https://example.com/posters/inception.jpg",
+            "imdb_code": "tt00000001",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "Christopher Nolan"
+            ],
+            "writers": [
+                "Aaron Sorkin"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Thriller"
+            ],
+            "events": [
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Major sequence",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 90,
+                    "comment": "Emotional confrontation",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Dune",
+            "runtime_minutes": 9300,
+            "synopsis": "Paul Atreides leads Freeman tribes in a battle for Arrakis.",
+            "release_year": 2021,
+            "poster_url": "https://example.com/posters/dune.jpg",
+            "imdb_code": "tt00000002",
+            "studios": [
+                "Paramount"
+            ],
+            "directors": [
+                "Denis Villeneuve"
+            ],
+            "writers": [
+                "Phoebe Waller-Bridge"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Adventure"
+            ],
+            "events": [
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 180,
+                    "comment": "Ambush",
+                    "categories": [
+                        "Sexual Violence"
+                    ]
+                },
+                {
+                    "time_minutes": 7200,
+                    "duration_minutes": 150,
+                    "comment": "Battle sequence",
+                    "categories": [
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Barbie",
+            "runtime_minutes": 6840,
+            "synopsis": "Barbie faces an existential crisis and ventures into the real world.",
+            "release_year": 2023,
+            "poster_url": "https://example.com/posters/barbie.jpg",
+            "imdb_code": "tt00000003",
+            "studios": [
+                "Universal"
+            ],
+            "directors": [
+                "Greta Gerwig"
+            ],
+            "writers": [
+                "Quentin Tarantino"
+            ],
+            "genres": [
+                "Comedy",
+                "Fantasy"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1800,
+                    "duration_minutes": 60,
+                    "comment": "Emotional scene",
+                    "categories": [
+                        "Birth Event"
+                    ]
+                },
+                {
+                    "time_minutes": 3000,
+                    "duration_minutes": 80,
+                    "comment": "Car incident played for laughs",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Edge of Tomorrow",
+            "runtime_minutes": 6780,
+            "synopsis": "A soldier relives the same fatal day to fight aliens.",
+            "release_year": 2014,
+            "poster_url": "https://example.com/posters/edge_of_tomorrow.jpg",
+            "imdb_code": "tt00000004",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "Doug Liman"
+            ],
+            "writers": [
+                "Christopher McQuarrie"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Action"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1200,
+                    "duration_minutes": 45,
+                    "comment": "Training mishap",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 60,
+                    "comment": "Vehicle crash",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Mad Max: Fury Road",
+            "runtime_minutes": 7200,
+            "synopsis": "Post-apocalyptic chase across the wasteland.",
+            "release_year": 2015,
+            "poster_url": "https://example.com/posters/mad_max_fury_road.jpg",
+            "imdb_code": "tt00000005",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "George Miller"
+            ],
+            "writers": [
+                "George Miller"
+            ],
+            "genres": [
+                "Action",
+                "Adventure"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2100,
+                    "duration_minutes": 120,
+                    "comment": "Car pile-up",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                },
+                {
+                    "time_minutes": 4800,
+                    "duration_minutes": 180,
+                    "comment": "Assault in convoy",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Interstellar",
+            "runtime_minutes": 10140,
+            "synopsis": "A team travels through a wormhole to save humanity.",
+            "release_year": 2014,
+            "poster_url": "https://example.com/posters/interstellar.jpg",
+            "imdb_code": "tt00000006",
+            "studios": [
+                "Paramount"
+            ],
+            "directors": [
+                "Christopher Nolan"
+            ],
+            "writers": [
+                "Jonathan Nolan"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 90,
+                    "comment": "Devastating dust storm",
+                    "categories": [
+                        "Other"
+                    ]
+                },
+                {
+                    "time_minutes": 7200,
+                    "duration_minutes": 60,
+                    "comment": "Psychological breakdown",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "The Dark Knight",
+            "runtime_minutes": 9120,
+            "synopsis": "Batman faces a criminal mastermind, Joker.",
+            "release_year": 2008,
+            "poster_url": "https://example.com/posters/dark_knight.jpg",
+            "imdb_code": "tt00000007",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "Christopher Nolan"
+            ],
+            "writers": [
+                "Jonathan Nolan"
+            ],
+            "genres": [
+                "Action",
+                "Crime"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2700,
+                    "duration_minutes": 120,
+                    "comment": "Hostage situation",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 90,
+                    "comment": "Interrogation scene",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Arrival",
+            "runtime_minutes": 6960,
+            "synopsis": "A linguist communicates with extraterrestrial visitors.",
+            "release_year": 2016,
+            "poster_url": "https://example.com/posters/arrival.jpg",
+            "imdb_code": "tt00000008",
+            "studios": [
+                "Paramount"
+            ],
+            "directors": [
+                "Denis Villeneuve"
+            ],
+            "writers": [
+                "Eric Heisserer"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 60,
+                    "comment": "Panic in lab",
+                    "categories": [
+                        "Other"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 120,
+                    "comment": "Psychological stress",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Gravity",
+            "runtime_minutes": 5460,
+            "synopsis": "Astronauts struggle to survive in space.",
+            "release_year": 2013,
+            "poster_url": "https://example.com/posters/gravity.jpg",
+            "imdb_code": "tt00000009",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "Alfonso Cuarón"
+            ],
+            "writers": [
+                "Alfonso Cuarón"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Thriller"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1200,
+                    "duration_minutes": 300,
+                    "comment": "Space debris strike",
+                    "categories": [
+                        "Other"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 90,
+                    "comment": "Panic attack",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Joker",
+            "runtime_minutes": 7320,
+            "synopsis": "A comedian's descent into madness.",
+            "release_year": 2019,
+            "poster_url": "https://example.com/posters/joker.jpg",
+            "imdb_code": "tt00000010",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "Todd Phillips"
+            ],
+            "writers": [
+                "Todd Phillips"
+            ],
+            "genres": [
+                "Crime",
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Public assault",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 4800,
+                    "duration_minutes": 150,
+                    "comment": "Psychological manipulation",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ford v Ferrari",
+            "runtime_minutes": 9000,
+            "synopsis": "Racing team challenges limits to beat Ferrari.",
+            "release_year": 2019,
+            "poster_url": "https://example.com/posters/fordvferrari.jpg",
+            "imdb_code": "tt00000011",
+            "studios": [
+                "20th Century"
+            ],
+            "directors": [
+                "James Mangold"
+            ],
+            "writers": [
+                "Jez Butterworth"
+            ],
+            "genres": [
+                "Drama",
+                "Action"
+            ],
+            "events": [
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "High-speed crash",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 60,
+                    "comment": "Pit lane injury",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Baby Driver",
+            "runtime_minutes": 6840,
+            "synopsis": "Getaway driver seeks redemption.",
+            "release_year": 2017,
+            "poster_url": "https://example.com/posters/baby_driver.jpg",
+            "imdb_code": "tt00000012",
+            "studios": [
+                "TriStar"
+            ],
+            "directors": [
+                "Edgar Wright"
+            ],
+            "writers": [
+                "Edgar Wright"
+            ],
+            "genres": [
+                "Action",
+                "Crime"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 180,
+                    "comment": "Car chase crash",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 120,
+                    "comment": "Assault by gang",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "The Martian",
+            "runtime_minutes": 8460,
+            "synopsis": "Astronaut survives alone on Mars.",
+            "release_year": 2015,
+            "poster_url": "https://example.com/posters/martian.jpg",
+            "imdb_code": "tt00000013",
+            "studios": [
+                "20th Century"
+            ],
+            "directors": [
+                "Ridley Scott"
+            ],
+            "writers": [
+                "Drew Goddard"
+            ],
+            "genres": [
+                "Sci-Fi",
+                "Adventure"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1800,
+                    "duration_minutes": 60,
+                    "comment": "Equipment failure",
+                    "categories": [
+                        "Other"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 90,
+                    "comment": "Isolation stress",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Room",
+            "runtime_minutes": 7080,
+            "synopsis": "A mother and son escape captivity and rebuild their lives.",
+            "release_year": 2015,
+            "poster_url": "https://example.com/posters/room.jpg",
+            "imdb_code": "tt00000014",
+            "studios": [
+                "A24"
+            ],
+            "directors": [
+                "Lenny Abrahamson"
+            ],
+            "writers": [
+                "Emma Donoghue"
+            ],
+            "genres": [
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1200,
+                    "duration_minutes": 300,
+                    "comment": "Abuse depiction",
+                    "categories": [
+                        "Sexual Violence"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Trauma flashback",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Crash",
+            "runtime_minutes": 6900,
+            "synopsis": "Interwoven stories about discrimination and redemption.",
+            "release_year": 2004,
+            "poster_url": "https://example.com/posters/crash.jpg",
+            "imdb_code": "tt00000015",
+            "studios": [
+                "Lionsgate"
+            ],
+            "directors": [
+                "Paul Haggis"
+            ],
+            "writers": [
+                "Paul Haggis"
+            ],
+            "genres": [
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 60,
+                    "comment": "Car crash scene",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                },
+                {
+                    "time_minutes": 4800,
+                    "duration_minutes": 120,
+                    "comment": "Assault narrative",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Blue Valentine",
+            "runtime_minutes": 6720,
+            "synopsis": "A couple's relationship disintegrates.",
+            "release_year": 2010,
+            "poster_url": "https://example.com/posters/blue_valentine.jpg",
+            "imdb_code": "tt00000016",
+            "studios": [
+                "The Weinstein Company"
+            ],
+            "directors": [
+                "Derek Cianfrance"
+            ],
+            "writers": [
+                "Derek Cianfrance"
+            ],
+            "genres": [
+                "Drama",
+                "Romance"
+            ],
+            "events": [
+                {
+                    "time_minutes": 3000,
+                    "duration_minutes": 120,
+                    "comment": "Verbal abuse",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 4200,
+                    "duration_minutes": 60,
+                    "comment": "Physical altercation",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "The Impossible",
+            "runtime_minutes": 6840,
+            "synopsis": "A family's survival story during a tsunami.",
+            "release_year": 2012,
+            "poster_url": "https://example.com/posters/the_impossible.jpg",
+            "imdb_code": "tt00000017",
+            "studios": [
+                "Summit Entertainment"
+            ],
+            "directors": [
+                "J.A. Bayona"
+            ],
+            "writers": [
+                "Sergio G. Sánchez"
+            ],
+            "genres": [
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1800,
+                    "duration_minutes": 300,
+                    "comment": "Wave impact injuries",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 240,
+                    "comment": "Trauma aftermath",
+                    "categories": [
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Gone Girl",
+            "runtime_minutes": 8820,
+            "synopsis": "A missing woman and media frenzy hide underlying truths.",
+            "release_year": 2014,
+            "poster_url": "https://example.com/posters/gone_girl.jpg",
+            "imdb_code": "tt00000018",
+            "studios": [
+                "20th Century"
+            ],
+            "directors": [
+                "David Fincher"
+            ],
+            "writers": [
+                "Gillian Flynn"
+            ],
+            "genres": [
+                "Thriller",
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 180,
+                    "comment": "Manipulation revealed",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 7200,
+                    "duration_minutes": 120,
+                    "comment": "Violent altercation",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Whiplash",
+            "runtime_minutes": 6420,
+            "synopsis": "A drummer faces extreme pressure from a demanding instructor.",
+            "release_year": 2014,
+            "poster_url": "https://example.com/posters/whiplash.jpg",
+            "imdb_code": "tt00000019",
+            "studios": [
+                "Sony"
+            ],
+            "directors": [
+                "Damien Chazelle"
+            ],
+            "writers": [
+                "Damien Chazelle"
+            ],
+            "genres": [
+                "Drama",
+                "Documentary"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 120,
+                    "comment": "Verbal abuse session",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 90,
+                    "comment": "Car crash before concert",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Precious",
+            "runtime_minutes": 6600,
+            "synopsis": "An abused teenager finds a way forward.",
+            "release_year": 2009,
+            "poster_url": "https://example.com/posters/precious.jpg",
+            "imdb_code": "tt00000020",
+            "studios": [
+                "Lionsgate"
+            ],
+            "directors": [
+                "Lee Daniels"
+            ],
+            "writers": [
+                "Geoffrey Fletcher"
+            ],
+            "genres": [
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1800,
+                    "duration_minutes": 300,
+                    "comment": "Assault background",
+                    "categories": [
+                        "Sexual Violence"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Physical confrontation",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A Star Is Born",
+            "runtime_minutes": 8040,
+            "synopsis": "Singer and mentor's entwined rise and fall.",
+            "release_year": 2018,
+            "poster_url": "https://example.com/posters/a_star_is_born.jpg",
+            "imdb_code": "tt00000021",
+            "studios": [
+                "Warner Bros"
+            ],
+            "directors": [
+                "Bradley Cooper"
+            ],
+            "writers": [
+                "Eric Roth"
+            ],
+            "genres": [
+                "Drama",
+                "Documentary"
+            ],
+            "events": [
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Public humiliation",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 120,
+                    "comment": "Altercation backstage",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "The Pursuit of Happyness",
+            "runtime_minutes": 7020,
+            "synopsis": "A father's struggle through homelessness.",
+            "release_year": 2006,
+            "poster_url": "https://example.com/posters/pursuit_happyness.jpg",
+            "imdb_code": "tt00000022",
+            "studios": [
+                "Columbia Pictures"
+            ],
+            "directors": [
+                "Gabriele Muccino"
+            ],
+            "writers": [
+                "Steven Conrad"
+            ],
+            "genres": [
+                "Drama",
+                "Historical"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1200,
+                    "duration_minutes": 60,
+                    "comment": "Birth complication memory",
+                    "categories": [
+                        "Birth Event"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 90,
+                    "comment": "Street fight encounter",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Sicario",
+            "runtime_minutes": 7260,
+            "synopsis": "An agent exposes the complexities of border conflict.",
+            "release_year": 2015,
+            "poster_url": "https://example.com/posters/sicario.jpg",
+            "imdb_code": "tt00000023",
+            "studios": [
+                "Lionsgate"
+            ],
+            "directors": [
+                "Denis Villeneuve"
+            ],
+            "writers": [
+                "Taylor Sheridan"
+            ],
+            "genres": [
+                "Crime",
+                "Thriller"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 150,
+                    "comment": "Ambush on bridge",
+                    "categories": [
+                        "Other"
+                    ]
+                },
+                {
+                    "time_minutes": 5400,
+                    "duration_minutes": 120,
+                    "comment": "Interrogation pressure",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "The Revenant",
+            "runtime_minutes": 9360,
+            "synopsis": "A frontiersman fights for survival.",
+            "release_year": 2015,
+            "poster_url": "https://example.com/posters/revenant.jpg",
+            "imdb_code": "tt00000024",
+            "studios": [
+                "20th Century"
+            ],
+            "directors": [
+                "Alejandro G. Iñárritu"
+            ],
+            "writers": [
+                "Mark L. Smith"
+            ],
+            "genres": [
+                "Adventure",
+                "Drama"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1800,
+                    "duration_minutes": 300,
+                    "comment": "Bear attack",
+                    "categories": [
+                        "Physical Abuse"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Trauma visions",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Hidden Figures",
+            "runtime_minutes": 7620,
+            "synopsis": "Three women at NASA overcome barriers.",
+            "release_year": 2016,
+            "poster_url": "https://example.com/posters/hidden_figures.jpg",
+            "imdb_code": "tt00000025",
+            "studios": [
+                "20th Century"
+            ],
+            "directors": [
+                "Theodore Melfi"
+            ],
+            "writers": [
+                "Allison Schroeder"
+            ],
+            "genres": [
+                "Drama",
+                "Historical"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 60,
+                    "comment": "Birth story recalled",
+                    "categories": [
+                        "Birth Event"
+                    ]
+                },
+                {
+                    "time_minutes": 4800,
+                    "duration_minutes": 90,
+                    "comment": "Car mishap near campus",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "La La Land",
+            "runtime_minutes": 7680,
+            "synopsis": "Artists chase dreams and love in LA.",
+            "release_year": 2016,
+            "poster_url": "https://example.com/posters/la_la_land.jpg",
+            "imdb_code": "tt00000026",
+            "studios": [
+                "Lionsgate"
+            ],
+            "directors": [
+                "Damien Chazelle"
+            ],
+            "writers": [
+                "Damien Chazelle"
+            ],
+            "genres": [
+                "Comedy",
+                "Romance"
+            ],
+            "events": [
+                {
+                    "time_minutes": 2400,
+                    "duration_minutes": 60,
+                    "comment": "Car fender bender",
+                    "categories": [
+                        "Car Crash"
+                    ]
+                },
+                {
+                    "time_minutes": 3600,
+                    "duration_minutes": 120,
+                    "comment": "Heated argument",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "The King's Speech",
+            "runtime_minutes": 7080,
+            "synopsis": "A king overcomes a speech impediment with help.",
+            "release_year": 2010,
+            "poster_url": "https://example.com/posters/kings_speech.jpg",
+            "imdb_code": "tt00000027",
+            "studios": [
+                "The Weinstein Company"
+            ],
+            "directors": [
+                "Tom Hooper"
+            ],
+            "writers": [
+                "David Seidler"
+            ],
+            "genres": [
+                "Drama",
+                "Historical"
+            ],
+            "events": [
+                {
+                    "time_minutes": 1800,
+                    "duration_minutes": 60,
+                    "comment": "Birth story referenced",
+                    "categories": [
+                        "Birth Event"
+                    ]
+                },
+                {
+                    "time_minutes": 4200,
+                    "duration_minutes": 120,
+                    "comment": "Therapeutic breakdown",
+                    "categories": [
+                        "Psychological Abuse"
+                    ]
+                }
+            ]
+        }
+    ]
+}
