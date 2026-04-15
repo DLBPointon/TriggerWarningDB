@@ -1,149 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Movies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/styles.css">
-  <style>
-    .movies-container {
-      max-width: 80%;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .movie-card {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 1rem;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      background: #fff;
-    }
-    .movie-poster {
-      width: 96px;
-      height: 144px;
-      object-fit: cover;
-      border-radius: 4px;
-      background: #f2f2f2;
-    }
-    .movie-title {
-      font-size: 1.25rem;
-      margin: 0;
-    }
-    .movie-meta {
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
-    }
-    .movie-actions {
-      margin-top: 0.5rem;
-    }
-    .movie-actions a {
-      text-decoration: none;
-      color: #0a66c2;
-    }
-    header.page-header h1 {
-      margin: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .movies-container {
+            max-width: 80%;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .movie-card {
+            display: grid;
+            grid-template-columns: 96px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: #fff;
+        }
+
+        .movie-poster {
+            width: 96px;
+            height: 144px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #f2f2f2;
+        }
+
+        .movie-title {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .movie-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .movie-actions {
+            margin-top: 0.5rem;
+        }
+
+        .movie-actions a {
+            text-decoration: none;
+            color: #0a66c2;
+        }
+
+        header.page-header h1 {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-  <header class="page-header">
-    <h1><a href="/">Trigger Warning</a></h1>
-    <p class="subheader">Browse the latest movies added to TWDB</p>
-  </header>
+    <header class="page-header">
+        <h1><a href="/">Trigger Warning</a></h1>
+        <p class="subheader">Browse the latest movies added to TWDB</p>
+    </header>
 
-  {% include "nav_bar" %}
+    {% include "nav_bar" %}
 
-  <section class="movies-container" style="margin-top: 1rem;">
-    <form method="get" action="/movies" class="advanced-search" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.75rem; margin-bottom:1rem;">
-      <input type="text" name="title"    value="{{ page.title | default(value='') }}"    placeholder="Title"    style="padding:0.5rem;">
-      <input type="number" name="year"   value="{{ page.year   | default(value='') }}"   placeholder="Year"     style="padding:0.5rem;">
-      <input type="text" name="studio"   value="{{ page.studio | default(value='') }}"   placeholder="Studio"   style="padding:0.5rem;">
-      <input type="text" name="director" value="{{ page.director | default(value='') }}" placeholder="Director" style="padding:0.5rem;">
-      <input type="text" name="writer"   value="{{ page.writer | default(value='') }}"   placeholder="Writer"   style="padding:0.5rem;">
-      <select name="genre" style="padding:0.5rem;">
-        <option value="">Any genre</option>
-        {% if page.genres %}
-          {% for g in page.genres %}
-            <option value="{{ g }}" {% if page.genre and page.genre == g %}selected{% endif %}>{{ g }}</option>
-          {% endfor %}
-        {% endif %}
-      </select>
-      <input type="hidden" name="per_page" value="{{ page.per_page | default(value=12) }}">
-      <div style="grid-column: 1 / span 3; display:flex; gap:0.5rem;">
-        <button type="submit" style="padding:0.5rem 1rem;">Search</button>
-        <a href="/movies" style="padding:0.5rem 1rem; border:1px solid #ccc; border-radius:4px; text-decoration:none;">Reset</a>
-      </div>
-    </form>
-  </section>
+    <section class="movies-container" style="margin-top: 1rem;">
+        <form method="get" action="/movies" class="advanced-search"
+            style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.75rem; margin-bottom:1rem;">
+            <input type="text" name="title" value="{{ page.title | default(value='') }}" placeholder="Title"
+                style="padding:0.5rem;">
+            <input type="number" name="year" value="{{ page.year   | default(value='') }}" placeholder="Year"
+                style="padding:0.5rem;">
+            <input type="text" name="studio" value="{{ page.studio | default(value='') }}" placeholder="Studio"
+                style="padding:0.5rem;">
+            <input type="text" name="director" value="{{ page.director | default(value='') }}" placeholder="Director"
+                style="padding:0.5rem;">
+            <input type="text" name="writer" value="{{ page.writer | default(value='') }}" placeholder="Writer"
+                style="padding:0.5rem;">
+            <select name="genre" style="padding:0.5rem;">
+                <option value="">Any genre</option>
+                {% if page.genres %}
+                {% for g in page.genres %}
+                <option value="{{ g }}" {% if page.genre and page.genre==g %}selected{% endif %}>{{ g }}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+            <select name="event_category" style="padding:0.5rem;">
+                <option value="">Any trauma type</option>
+                {% if page.event_categories %}
+                {% for ec in page.event_categories %}
+                <option value="{{ ec }}" {% if page.event_category and page.event_category==ec %}selected{% endif %}>{{
+                    ec }}</option>
+                {% endfor %}
+                {% endif %}
+            </select>
+            <input type="hidden" name="per_page" value="{{ page.per_page | default(value=12) }}">
+            <div style="grid-column: 1 / span 3; display:flex; gap:0.5rem;">
+                <button type="submit" style="padding:0.5rem 1rem;">Search</button>
+                <a href="/movies"
+                    style="padding:0.5rem 1rem; border:1px solid #ccc; border-radius:4px; text-decoration:none;">Reset</a>
+            </div>
+        </form>
+    </section>
 
     <main class="movies-container">
-    {% if page and page.items and page.items | length > 0 %}
+        {% if page and page.items and page.items | length > 0 %}
         <div style="margin-top:0.5rem;">
             <div>
                 Page {{ page.page }} of {{ (page.total_count / page.per_page) | round(method="ceil") }}
             </div>
             {% if page.has_prev %}
-                <a href="/movies?page={{ page.page - 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}">← Prev</a>
+            <a
+                href="/movies?page={{ page.page - 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}{% if page.event_category %}&event_category={{ page.event_category }}{% endif %}">←
+                Prev</a>
             {% endif %}
             {% if page.has_next %}
-                {% if page.has_prev %} | {% endif %}
-                <a href="/movies?page={{ page.page + 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}">Next →</a>
+            {% if page.has_prev %} | {% endif %}
+            <a
+                href="/movies?page={{ page.page + 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}{% if page.event_category %}&event_category={{ page.event_category }}{% endif %}">Next
+                →</a>
             {% endif %}
         </div>
-      {% for m in page.items %}
+        {% for m in page.items %}
         {% set movie_id = m.id | default(value=0) %}
         <article class="movie-card">
-          {% if m.poster_url %}
+            {% if m.poster_url %}
             <img class="movie-poster" src="{{ m.poster_url }}" alt="Poster for {{ m.title }}">
-          {% else %}
+            {% else %}
             <img class="movie-poster" src="/static/placeholder-poster.png" alt="No poster available">
-          {% endif %}
+            {% endif %}
 
-          <div class="movie-info">
-            <h2 class="movie-title">
-              <a href="/movies/{{ movie_id }}">{{ m.title }}</a>
-            </h2>
-            <div class="movie-meta">
-                Runtime: {{ (m.runtime_minutes) }} min  •
-                Year: {{ m.release_year }}
+            <div class="movie-info">
+                <h2 class="movie-title">
+                    <a href="/movies/{{ movie_id }}">{{ m.title }}</a>
+                </h2>
+                <div class="movie-meta">
+                    Runtime: {{ (m.runtime_minutes) }} min •
+                    Year: {{ m.release_year }}
+                </div>
+                <div class="movie-meta">
+                    {% if m.events_count and m.events_count > 0 %}
+                    Events: {{ m.events_count }}
+                    {% endif %}
+                    {% if m.events_per_hour %}
+                    • Events/hr: {{ m.events_per_hour | round(method="common") }}
+                    {% endif %}
+                </div>
+                <div class="movie-actions">
+                    <a href="/movies/{{ movie_id }}">View details</a>
+                </div>
             </div>
-            <div class="movie-meta">
-              {% if m.events_count and m.events_count > 0 %}
-                Events: {{ m.events_count }}
-              {% endif %}
-              {% if m.events_per_hour %}
-                • Events/hr: {{ m.events_per_hour | round(method="common") }}
-              {% endif %}
-            </div>
-            <div class="movie-actions">
-              <a href="/movies/{{ movie_id }}">View details</a>
-            </div>
-          </div>
         </article>
-      {% endfor %}
+        {% endfor %}
 
-      <nav class="pagination" style="margin-top:1rem;">
-        <div>
-          Page {{ page.page }} of {{ (page.total_count / page.per_page) | round(method="ceil") }}
-        </div>
-        <div style="margin-top:0.5rem;">
-          {% if page.has_prev %}
-            <a href="/movies?page={{ page.page - 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}">← Prev</a>
-          {% endif %}
-          {% if page.has_next %}
-            {% if page.has_prev %} | {% endif %}
-            <a href="/movies?page={{ page.page + 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}">Next →</a>
-          {% endif %}
-        </div>
-      </nav>
-    {% else %}
-      <p>No movies found yet.</p>
-    {% endif %}
-  </main>
+        <nav class="pagination" style="margin-top:1rem;">
+            <div>
+                Page {{ page.page }} of {{ (page.total_count / page.per_page) | round(method="ceil") }}
+            </div>
+            <div style="margin-top:0.5rem;">
+                {% if page.has_prev %}
+                <a
+                    href="/movies?page={{ page.page - 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}{% if page.event_category %}&event_category={{ page.event_category }}{% endif %}">←
+                    Prev</a>
+                {% endif %}
+                {% if page.has_next %}
+                {% if page.has_prev %} | {% endif %}
+                <a
+                    href="/movies?page={{ page.page + 1 }}&per_page={{ page.per_page }}{% if page.title %}&title={{ page.title }}{% endif %}{% if page.synopsis %}&synopsis={{ page.synopsis }}{% endif %}{% if page.year %}&year={{ page.year }}{% endif %}{% if page.studio %}&studio={{ page.studio }}{% endif %}{% if page.director %}&director={{ page.director }}{% endif %}{% if page.writer %}&writer={{ page.writer }}{% endif %}{% if page.genre %}&genre={{ page.genre }}{% endif %}{% if page.event_category %}&event_category={{ page.event_category }}{% endif %}">Next
+                    →</a>
+                {% endif %}
+            </div>
+        </nav>
+        {% else %}
+        <p>No movies found yet.</p>
+        {% endif %}
+    </main>
 </body>
+
 </html>
