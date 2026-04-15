@@ -13,6 +13,8 @@ use crate::crud::{
     movie_crud::create_movie,
     user_crud::find_user_by_email,
 };
+use crate::schema::event_categories::dsl as event_cats;
+
 use crate::endpoints::add_event::api_add_event;
 use crate::endpoints::event_categories::{list_event_categories, list_genre_categories};
 use crate::endpoints::movie_details::detail;
@@ -76,7 +78,9 @@ async fn api_create_movie(_admin: AdminGuard, movie: Json<NewMovie>, conn: DbCon
         .expect("Failed to create movie")
 }
 
-#[get("/movies?<page>&<per_page>&<title>&<year>&<studio>&<director>&<writer>&<genre>")]
+#[get(
+    "/movies?<page>&<per_page>&<title>&<year>&<studio>&<director>&<writer>&<genre>&<event_category>"
+)]
 async fn list(
     conn: DbConn,
     page: Option<i64>,
@@ -87,6 +91,7 @@ async fn list(
     director: Option<String>,
     writer: Option<String>,
     genre: Option<String>,
+    event_category: Option<String>,
 ) -> Template {
     let pagination_ctx = conn
         .run(move |c| {
@@ -182,6 +187,23 @@ async fn list(
                 page_query = page_query.filter(cond);
             }
 
+            // Event category (trauma type) filter
+            if let Some(ec) = &event_category {
+                let name = ec.clone();
+                let event_ids = s::movie_event_categories::table
+                    .inner_join(s::event_categories::table)
+                    .filter(s::event_categories::name.eq(name))
+                    .select(s::movie_event_categories::movie_event_id);
+                let cond = exists(
+                    s::movie_events::table
+                        .filter(s::movie_events::movie_id.eq(mv::id))
+                        .filter(s::movie_events::id.eq_any(event_ids))
+                        .select(s::movie_events::id),
+                );
+                count_query = count_query.filter(cond.clone());
+                page_query = page_query.filter(cond);
+            }
+
             // Total count for filtered query (use independent boxed query to avoid move issues)
             let total_count: i64 = count_query.count().get_result::<i64>(c).unwrap_or(0);
 
@@ -233,6 +255,14 @@ async fn list(
                     .unwrap_or_default()
             };
 
+            let event_categories_list = {
+                event_cats::event_categories
+                    .order(event_cats::name.asc())
+                    .select(event_cats::name)
+                    .load::<String>(c)
+                    .unwrap_or_default()
+            };
+
             Ok::<serde_json::Value, diesel::result::Error>(serde_json::json!({
                 "items": items,
                 "page": page,
@@ -246,7 +276,9 @@ async fn list(
                 "director": director,
                 "writer": writer,
                 "genre": genre,
-                "genres": genres_list
+                "genres": genres_list,
+                "event_category": event_category,
+                "event_categories": event_categories_list
             }))
         })
         .await
