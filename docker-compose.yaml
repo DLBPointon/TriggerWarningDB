@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trigger_warning
+    ports:
+      - "8000:8000"
+    environment:
+      ROCKET_ADDRESS: "0.0.0.0"
+      ROCKET_PORT: "8000"
+      DATABASE_URL: "/data/db.sqlite"
+      ROCKET_DATABASES: '{sqlite_database={url="/data/db.sqlite",pool_size=2}}'
+      JWT_SECRET: "${JWT_SECRET}"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - tw_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8000 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  tw_data:
+    driver: local
