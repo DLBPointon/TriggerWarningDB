@@ -1,0 +1,67 @@
+name: Adding Media Event
+description: A quick form for adding media to TWDB
+title: "[ADD EVENT]: "
+labels: ["Need triage"]
+assignees:
+  - DLBPointon
+type: task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this form!
+  - type: input
+    id: movie_title
+    attributes:
+      label: Movie Title
+      description: Title of the media you want to add to the database
+      placeholder: Alien
+    validations:
+      required: false
+  - type: input
+    id: imdb_code
+    attributes:
+      label: IMDB Code
+      description: So I can pull all of the details about the media.
+      placeholder: tt0078748
+    validations:
+      required: false
+  - type: input
+    id: timespan
+    attributes:
+      label: Time Span
+      description: So that we can most accuratley inform people of the parts of a media to avoid what minute did the event start and finish?
+      placeholder: 25-42
+    validations:
+      required: false
+  - type: dropdown
+    id: event_type
+    attributes:
+      label: Event Type
+      description: What type of event is this?
+      options:
+        - Birth Event
+        - Baby Loss
+        - Parent Loss
+        - Sexual Violence
+        - Car Crash
+        - Psychological Abuse
+        - Physical Abuse
+        - Other
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: event_description
+    attributes:
+      label: Event Description
+      description: If you can, please describe the event as much as you can. If you can't then just type "HP" or "Help Please" and I'll find it my self.
+      render: markdown
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com) -- WE DON'T HAVE ONE YET, BUT PLEASE JUST USE THIS FORM FOR REAL EVENTS.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
