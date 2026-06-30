@@ -6,7 +6,6 @@ labels:
   - "Need triage"
 assignees:
   - DLBPointon
-type: task
 body:
   - type: markdown
     attributes:
