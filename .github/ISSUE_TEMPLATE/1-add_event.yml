@@ -2,8 +2,7 @@ name: Adding Media Event
 description: A quick form for adding media to TWDB
 title: "[ADD EVENT]: "
 labels:
-  - "event"
-  - "Need triage"
+  - "enhancement"
 assignees:
   - DLBPointon
 body:
