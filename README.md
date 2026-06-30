@@ -2,7 +2,7 @@
 
 Name is in the air to be honest.
 
-### NOTE: AI - mainly Claude, has been used in some of this project, mainly in translating work from previous iterations of the project into rust as well as some of the more mudane tasks of extending html templates and generating css. At no point have I allowed it to go wild and just write tons of stuff, I have made sure I have gone through and reviewed it all.
+### NOTE: AI - mainly Claude, has been used in some of this project, mainly in translating work from previous iterations of the project into rust as well as some of the more mudane tasks of extending html templates and generating css. At no point have I allowed it to go wild and just write tons of stuff, I have made sure I have gone through and reviewed it all. Any messy code you do fine, you can rest assured that it's from a human unless expressely stated.
 
 ## About
 A website and database dedicated to helping those with traumatic experiences enjoy media again, without the shock of a traumatic event. This project aims to add a degree of annotation to the current IMDB and TVDB projects, via the community.
