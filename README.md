@@ -39,16 +39,16 @@ Admittedly, it has gotten better since the last time I looked at it. But the abo
         - Are what we have enough to capture an event type without losing the nuance of that event?
             - Is Birth Trauma too "generic"?
             - Should it be seperated into:
-                - "Birth Event"
-                - "Child Loss"
-                - "Parent Loss"
-                - "Medically Difficult Birth Event"
+                - "BT - Birth Event"
+                - "BT - Child Loss"
+                - "BT - Parent Loss"
+                - "BT - Medical Difficulty"
             - Likewise with "Sexual Violence"
                 - It is a very broad term. 
                 - Should it also be split out.
             - And then the interplay between various events.
                 - The effect of CSA on Birth, should this be it's own topic.
-             
+            - Really these are questions for researchers and experts in the field.
 
 ## Tech Stack
 - Rocket.rs
