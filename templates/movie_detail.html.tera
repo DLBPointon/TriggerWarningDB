@@ -266,10 +266,10 @@
                         {% for e in grp.events %}
                         <div class="event-item">
                             <div class="event-meta">
-                                {% if e.verified == false %}
-                                <span class="not-verified"> Not yet verified! </span>
-                                {% else %}
+                                {% if e.verified %}
                                 <span class="verified"> Verified! </span>
+                                {% else %}
+                                <span class="not-verified"> Not yet verified! </span>
                                 {% endif %}
                                 {% if e.time_minutes >= 0 %} • Event Starts at: {{ (e.time_minutes) }} min{% endif
                                 %}

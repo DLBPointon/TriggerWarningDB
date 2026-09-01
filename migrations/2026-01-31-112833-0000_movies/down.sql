@@ -1,1 +1,25 @@
--- This file should undo anything in `up.sql`
+DROP TRIGGER IF EXISTS trg_movie_writers_writer;
+DROP TRIGGER IF EXISTS trg_movie_directors_director;
+DROP TRIGGER IF EXISTS trg_movie_studios_studio;
+DROP TRIGGER IF EXISTS trg_movie_genres_genre;
+DROP TRIGGER IF EXISTS trg_event_categories_block_delete;
+DROP TRIGGER IF EXISTS trg_event_categories_block_update;
+DROP TRIGGER IF EXISTS trg_event_categories_block_insert;
+DROP TRIGGER IF EXISTS trg_genres_block_delete;
+DROP TRIGGER IF EXISTS trg_genres_block_update;
+DROP TRIGGER IF EXISTS trg_genres_block_insert;
+DROP TABLE IF EXISTS movie_writers;
+DROP TABLE IF EXISTS movie_directors;
+DROP TABLE IF EXISTS movie_studios;
+DROP TABLE IF EXISTS movie_genres;
+DROP TABLE IF EXISTS movie_events;
+DROP TABLE IF EXISTS movie_event_categories;
+DROP TABLE IF EXISTS movie_writers;
+DROP TABLE IF EXISTS movie_directors;
+DROP TABLE IF EXISTS writers;
+DROP TABLE IF EXISTS directors;
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS event_categories;
+DROP TABLE IF EXISTS genres;
+DROP TABLE IF EXISTS certification;
+DROP TABLE IF EXISTS movies;

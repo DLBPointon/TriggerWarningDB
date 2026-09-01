@@ -317,6 +317,32 @@ async fn hello(conn: DbConn) -> Template {
 }
 
 ///
+/// LOGIN PAGE
+///
+#[get("/login")]
+async fn login_page(conn: DbConn) -> Template {
+    let app = conn.run(|c| get_app_data(c)).await.ok();
+    let app_ctx = app.map(|a| app_map(&a));
+    Template::render(
+        "login",
+        context! { app_info: app_ctx, current_page: "login" },
+    )
+}
+
+///
+/// PROFILE PAGE
+///
+#[get("/profile")]
+async fn profile_page(conn: DbConn) -> Template {
+    let app = conn.run(|c| get_app_data(c)).await.ok();
+    let app_ctx = app.map(|a| app_map(&a));
+    Template::render(
+        "profile",
+        context! { app_info: app_ctx, current_page: "profile" },
+    )
+}
+
+///
 /// CATEGORY EXPLAINER
 ///
 #[get("/category_explainer")]
@@ -376,6 +402,8 @@ async fn main() -> Result<(), rocket::Error> {
             routes![
                 hello,
                 about,
+                login_page,
+                profile_page,
                 login,
                 api_create_movie,
                 api_add_event,

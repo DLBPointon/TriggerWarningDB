@@ -8,6 +8,9 @@
                 href="/category_explainer">Categories</a>
             <a class="nav-link {% if current_page == 'about' %}active{% endif %}" href="/about">About</a>
         </div>
+        <div class="navbar-auth" id="navbarAuth">
+            <a class="nav-link login-btn" href="/login">Login</a>
+        </div>
     </div>
 </nav>
 
@@ -39,6 +42,26 @@
         grid-column: 2;
     }
 
+    .navbar-auth {
+        justify-self: end;
+        grid-column: 3;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .login-btn {
+        background: rgba(96, 165, 250, 0.2);
+        border: 1px solid #60a5fa;
+        font-weight: 500;
+        padding: 8px 12px;
+    }
+
+    .login-btn:hover {
+        background: rgba(96, 165, 250, 0.3);
+        color: #93c5fd;
+    }
+
     .nav-link {
         color: #ffffff;
         text-decoration: none;
@@ -58,9 +81,32 @@
         font-weight: 600;
     }
 
-    .navbar-inner::after {
-        content: "";
-        justify-self: end;
+    .profile-link {
+        background: rgba(96, 165, 250, 0.2);
+        border: 1px solid #60a5fa;
+        font-weight: 500;
+        padding: 8px 12px;
+    }
+
+    .profile-link:hover {
+        background: rgba(96, 165, 250, 0.3);
+        color: #93c5fd;
+    }
+
+    .logout-btn {
+        background: rgba(239, 68, 68, 0.2);
+        border: 1px solid #ef4444;
+        color: #fca5a5;
+        font-weight: 500;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: color 0.15s ease, background 0.15s ease;
+    }
+
+    .logout-btn:hover {
+        background: rgba(239, 68, 68, 0.3);
+        color: #fecaca;
     }
 
     @media (max-width: 640px) {
@@ -73,6 +119,51 @@
             justify-self: center;
             flex-wrap: wrap;
             gap: 10px;
+            grid-column: auto;
+        }
+
+        .navbar-auth {
+            grid-column: auto;
+            margin-top: 10px;
+            justify-content: center;
         }
     }
 </style>
+
+<script>
+    // Check if user is logged in and update navbar accordingly
+    function updateNavbarAuthState() {
+        const token = localStorage.getItem('auth_token');
+        const navbarAuth = document.getElementById('navbarAuth');
+
+        if (token) {
+            // User is logged in
+            navbarAuth.innerHTML = `
+                <a class="nav-link profile-link" href="/profile">Profile</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            `;
+        } else {
+            // User is not logged in
+            navbarAuth.innerHTML = `
+                <a class="nav-link login-btn" href="/login">Login</a>
+            `;
+        }
+    }
+
+    // Logout function
+    function logout() {
+        localStorage.removeItem('auth_token');
+        updateNavbarAuthState();
+        window.location.href = '/';
+    }
+
+    // Update navbar on page load
+    document.addEventListener('DOMContentLoaded', updateNavbarAuthState);
+
+    // Also update navbar when returning from login page (in case login was successful)
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            updateNavbarAuthState();
+        }
+    });
+</script>

@@ -10,6 +10,21 @@ It would just make it easier to search */
 
 PRAGMA foreign_keys = ON; /* literally turns on foreign keys */
 
+CREATE TABLE IF NOT EXISTS certification (
+  id   INTEGER PRIMARY KEY NOT NULL,
+  name TEXT NOT NULL COLLATE NOCASE UNIQUE,
+  description TEXT
+);
+
+INSERT INTO certification (id, name, description) VALUES
+  (1, 'U', 'Universal, suitable for all ages'),
+  (2, 'PG', 'Parental Guidance, suitable for all but there maybe some content not suitable for young children'),
+  (3, '12A', 'Unsuitable for young children, under 12s should be accompanied by a parent or adult'),
+  (4, '12', 'Home Media use only, Unsuitable for young children, under 12s should be accompanied by a parent or adult'),
+  (5, '15', '15+ Only, may contain some sexual activity.'),
+  (6, '18', 'Adults only, may contain detailed sexual activity and/or very strong gory and potentially sadistic violence.'),
+  (7, 'R18', 'Adults only, can only be shown in licensed adult cinemas or sold at sex shops.');
+
 /***************
   Core table
 ***************/
@@ -22,8 +37,8 @@ CREATE TABLE IF NOT EXISTS movies (
   release_year    INTEGER NOT NULL,
   poster_url      TEXT,
   imdb_code       TEXT NOT NULL,
-  certification   TEXT NOT NULL,
-  CHECK (certification in ('U', 'PG', '12A', '12', '15', '18', 'R18'))
+  certification   INTEGER NOT NULL,
+  FOREIGN KEY (certification) REFERENCES certification(id)
 );
 
 -- Ensure natural key uniqueness across title, release_year, and imdb_code

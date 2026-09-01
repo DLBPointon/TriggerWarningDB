@@ -95,6 +95,15 @@ pub async fn seed_json(
             }
 
             for m in req.movies {
+                // Resolve certification ID from string
+                let cert_id = {
+                    use crate::schema::certification::dsl as cert;
+                    cert::certification
+                        .filter(cert::name.eq(&m.certification))
+                        .select(cert::id)
+                        .first::<i32>(c)?
+                };
+
                 // Insert movie
                 {
                     use crate::schema::movies::dsl as mv;
@@ -106,9 +115,10 @@ pub async fn seed_json(
                             mv::release_year.eq(m.release_year),
                             mv::poster_url.eq(m.poster_url.as_deref()),
                             mv::imdb_code.eq(m.imdb_code),
-                            mv::certification.eq(m.certification),
+                            mv::certification.eq(cert_id),
                         ))
                         .execute(c)?;
+                    ()
                 }
 
                 // Get movie id (latest by title, avoids last_insert_rowid issues)
@@ -174,6 +184,7 @@ pub async fn seed_json(
                                 me::time_minutes.eq(ev.time_minutes),
                                 me::duration_minutes.eq(ev.duration_minutes),
                                 me::comment.eq(ev.comment.as_str()),
+                                me::verified.eq(ev.verified),
                             ))
                             .execute(c)?;
                     }

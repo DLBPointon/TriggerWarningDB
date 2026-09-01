@@ -13,7 +13,7 @@ pub struct Movies {
     pub release_year: i32,
     pub poster_url: Option<String>,
     pub imdb_code: String,
-    pub certification: String,
+    pub certification: i32,
 }
 
 #[derive(Insertable, AsChangeset, Deserialize)]
@@ -26,7 +26,7 @@ pub struct NewMovie {
     pub release_year: i32,
     pub poster_url: Option<String>,
     pub imdb_code: String,
-    pub certification: String,
+    pub certification: i32,
 }
 
 #[derive(Deserialize)]

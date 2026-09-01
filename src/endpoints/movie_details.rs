@@ -63,6 +63,14 @@ pub async fn detail(id: i32, conn: DbConn) -> Template {
                     .select(w::name)
                     .load::<String>(c)?;
 
+                // Certification name (from certification table)
+                use crate::schema::certification::dsl as cert_dsl;
+                let certification_name: String = cert_dsl::certification
+                    .filter(cert_dsl::id.eq(m.certification))
+                    .select(cert_dsl::name)
+                    .first::<String>(c)
+                    .unwrap_or_else(|_| "Unknown".to_string());
+
                 // Events rows: (id, movie_id, event_id, time_minutes, duration_minutes, comment)
                 // We select specific columns rather than the whole row, since we only need these fields.
                 let events_rows = me::movie_events
@@ -136,6 +144,7 @@ pub async fn detail(id: i32, conn: DbConn) -> Template {
                         Vec<String>,            // directors
                         Vec<String>,            // writers
                         Vec<serde_json::Value>, // grouped_events
+                        String,                 // certification_name
                     )>,
                     diesel::result::Error,
                 >(Some((
@@ -145,6 +154,7 @@ pub async fn detail(id: i32, conn: DbConn) -> Template {
                     director_names,
                     writer_names,
                     grouped_events,
+                    certification_name,
                 )))
             } else {
                 Ok(None)
@@ -155,7 +165,7 @@ pub async fn detail(id: i32, conn: DbConn) -> Template {
         .flatten();
 
     // If not found, render with empty context
-    let (m, genres, studios, directors, writers, grouped_events) = match data {
+    let (m, genres, studios, directors, writers, grouped_events, certification_name) = match data {
         Some(tuple) => tuple,
         None => {
             return Template::render(
@@ -182,7 +192,7 @@ pub async fn detail(id: i32, conn: DbConn) -> Template {
         "release_year": m.release_year,
         "poster_url": m.poster_url,
         "imdb_code": m.imdb_code,
-        "certification": m.certification
+        "certification": certification_name
     });
 
     // Compute total events count across all grouped categories

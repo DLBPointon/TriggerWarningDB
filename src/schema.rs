@@ -6,6 +6,18 @@ diesel::table! {
         app_name -> Text,
         app_semantic_version -> Text,
         app_named_version -> Text,
+        homepage_welcome_banner -> Text,
+        homepage_welcome_text -> Text,
+        about_us_text -> Text,
+        goals_text -> Text,
+    }
+}
+
+diesel::table! {
+    certification (id) {
+        id -> Integer,
+        name -> Text,
+        description -> Nullable<Text>,
     }
 }
 
@@ -87,7 +99,14 @@ diesel::table! {
         release_year -> Integer,
         poster_url -> Nullable<Text>,
         imdb_code -> Text,
-        certification -> Text,
+        certification -> Integer,
+    }
+}
+
+diesel::table! {
+    role (id) {
+        id -> Integer,
+        name -> Text,
     }
 }
 
@@ -143,9 +162,11 @@ diesel::joinable!(movie_studios -> movies (movie_id));
 diesel::joinable!(movie_studios -> studios (studio_id));
 diesel::joinable!(movie_writers -> movies (movie_id));
 diesel::joinable!(movie_writers -> writers (writer_id));
+diesel::joinable!(movies -> certification (certification));
 
 diesel::allow_tables_to_appear_in_same_query!(
     app_info,
+    certification,
     directors,
     event_categories,
     genres,
@@ -156,6 +177,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     movie_studios,
     movie_writers,
     movies,
+    role,
     studios,
     tv_shows,
     users,

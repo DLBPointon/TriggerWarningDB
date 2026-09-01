@@ -10,4 +10,8 @@ pub struct AppInfo {
     pub app_name: String,
     pub app_semantic_version: String,
     pub app_named_version: String,
+    pub homepage_welcome_banner: String,
+    pub homepage_welcome_text: String,
+    pub about_us_text: String,
+    pub goals_text: String,
 }

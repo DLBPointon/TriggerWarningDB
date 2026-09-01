@@ -16,5 +16,9 @@ pub fn app_map(appinfo: &AppInfo) -> serde_json::Value {
         "app_name": appinfo.app_name,
         "app_semantic_version": appinfo.app_semantic_version,
         "app_named_version": appinfo.app_named_version,
+        "homepage_welcome_banner": appinfo.homepage_welcome_banner,
+        "homepage_welcome_text": appinfo.homepage_welcome_text,
+        "about_us_text": appinfo.about_us_text,
+        "goals_text": appinfo.goals_text,
     })
 }
