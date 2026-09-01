@@ -1,0 +1,81 @@
+{
+  "submitter_id": 1,
+  "movies": [
+    {
+      "title": "Tangled",
+      "general_note": "",
+      "certification": "PG",
+      "runtime_minutes": 100,
+      "synopsis": "The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.",
+      "release_year": 2010,
+      "poster_url": "https://artofthemovies.co.uk/cdn/shop/products/TangledOneSheetMoviePoster-582848_988ca397-a0b8-41d5-80a8-b6a535362b9e-894937.jpg?v=1696174352&width=900",
+      "imdb_code": "tt0398286",
+      "studios": ["Walt Disney Animation Studios", "Walt Disney Pictures"],
+      "directors": ["Nathan Greno", "Byron Howard"],
+      "writers": ["Dan Fogelman", "Jacob Grimm", "Wilhelm Grimm"],
+      "genres": ["Animation", "Adventure", "Comedy", "Musical", "Romance"],
+      "events": [
+        {
+          "verified": true,
+          "time_minutes": 2,
+          "duration_minutes": 2,
+          "comment": "Birth of the princess, child is very ill and eventally saved by a magic flower.",
+          "categories": ["Birth Event"]
+        }
+      ]
+    },
+    {
+      "title": "Wicked",
+      "general_note": "",
+      "certification": "PG",
+      "runtime_minutes": 220,
+      "synopsis": "Elphaba, a young woman ridiculed for her green skin, and Galinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads.",
+      "release_year": 2024,
+      "poster_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8h6Y2P0OWu2Qq5KSrm-HBJ9sCEBeCH9ZYaE8_fWQDMGFGjTa6",
+      "imdb_code": "tt1262426",
+      "studios": ["Universal Pictures", "Marc Platt Productions"],
+      "directors": ["Jon M. Chu"],
+      "writers": ["Winnie Holzman", "Dana Fox", "Gregory Maguire"],
+      "genres": ["Fantasy", "Musical", "Romance"],
+      "events": [
+        {
+          "verified": true,
+          "time_minutes": 7,
+          "duration_minutes": 2,
+          "comment": "Elphaba, who is green, is born which comes as a suprise to the parents.",
+          "categories": ["Birth Event"]
+        }
+      ]
+    },
+    {
+      "title": "28 Years Later",
+      "general_note": "Of course, it's a horror movie so you know... death and blood are everywhere.",
+      "certification": "15",
+      "runtime_minutes": 115,
+      "synopsis": "A group of survivors of the rage virus live on a small island. When one of the group leaves the island on a mission into the mainland, he discovers secrets, wonders, and horrors that have mutated not only the infected but other survivors.",
+      "release_year": 2025,
+      "poster_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOncy97P0ZREUjcZaB_iQvOaOvFob4EzPCmIriPQu9sXUUvsW1zuKlZw7I&s=10",
+      "imdb_code": "tt10548174",
+      "studios": ["Sony", "Columbia Pictures"],
+      "directors": ["Danny Boyle"],
+      "writers": ["Alex Garland"],
+      "genres": ["Horror", "Sci-Fi", "Thriller"],
+      "events": [
+        {
+          "verified": true,
+          "time_minutes": 79,
+          "duration_minutes": 2,
+          "comment": "A zombie, covered in blood gives birth in an abandoned train. Baby survives, zombie mother is killed. Scene is immediately eluded to by the camera focusing specifically on the pregnant zombie in a small group of zombies as she walks away from the main group.",
+          "categories": ["Birth Event"]
+        },
+        {
+          "verified": true,
+          "time_minutes": 97,
+          "duration_minutes": 2,
+          "comment": "The mother who the main characters spends much of the film trying to save is eventually diagnosed with cancer and then chooses to be effectively euthanised to stop her suffering. The son then places her skill atop the skull mountain.",
+          "categories": ["Parent Loss"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - Trigger Warning Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>{{ app_info.app_name }}</h1>
+    <p class="subheader">v{{ app_info.app_semantic_version }} — {{ app_info.app_named_version }}</p>
+  </header>
+
+  {% include "nav_bar" %}
+
+  <main class="center profile-container">
+    <div class="profile-box">
+      <h2>Admin Profile</h2>
+      <div class="profile-content">
+        <div class="admin-badge">
+          <span class="badge-icon">⚙️</span>
+          <span class="badge-text">IM AN ADMIN</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 200px);
+      padding: 20px;
+    }
+
+    .profile-box {
+      background: #1a2332;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .profile-box h2 {
+      color: #fff;
+      margin-bottom: 32px;
+      font-size: 24px;
+    }
+
+    .profile-content {
+      display: flex;
+      justify-content: center;
+    }
+
+    .admin-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(30, 64, 175, 0.2));
+      border: 2px solid #3b82f6;
+      border-radius: 12px;
+      padding: 24px 32px;
+      min-width: 200px;
+    }
+
+    .badge-icon {
+      font-size: 48px;
+    }
+
+    .badge-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #60a5fa;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 640px) {
+      .profile-box {
+        padding: 24px;
+      }
+
+      .profile-box h2 {
+        font-size: 20px;
+      }
+
+      .admin-badge {
+        min-width: 160px;
+        padding: 20px 24px;
+      }
+
+      .badge-icon {
+        font-size: 40px;
+      }
+
+      .badge-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</body>
+</html>
